@@ -21,6 +21,12 @@
 class GameMinimalReplaceMe : public GameCore
 {
 public:
+    ShaderGroup* m_pShader_VertexColor;
+    MySprite* m_pSprite;
+
+    Vector3 m_Position;
+
+public:
     GameMinimalReplaceMe();
     virtual ~GameMinimalReplaceMe();
 

@@ -55,6 +55,9 @@
     <Filter Include="Source - Platform\Source - WP8">
       <UniqueIdentifier>{e5550a78-55dc-4dfe-be19-a1ec884306de}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Data\Shaders">
+      <UniqueIdentifier>{7b555647-c561-4774-9e0b-91c7bb706bb7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SourceWindows\WinMain.cpp">
@@ -195,6 +198,9 @@
     </None>
     <None Include="SourceEmscripten\httpd_Release.py">
       <Filter>Source - Platform\Source - Emscripten</Filter>
+    </None>
+    <None Include="Data\Shaders\Shader_White.glsl">
+      <Filter>Data\Shaders</Filter>
     </None>
   </ItemGroup>
 </Project>

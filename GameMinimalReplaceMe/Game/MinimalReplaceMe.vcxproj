@@ -2141,6 +2141,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Data\Shaders\Shader_White.glsl" />
     <None Include="SourceAndroid\AndroidApk\AndroidManifest.xml">
       <SubType>Designer</SubType>
     </None>

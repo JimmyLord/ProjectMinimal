@@ -19,15 +19,30 @@
 
 GameMinimalReplaceMe::GameMinimalReplaceMe()
 {
+    m_pShader_VertexColor = 0;
+    m_pSprite = 0;
+
+    m_Position.Set( 0, 0, 0 );
 }
 
 GameMinimalReplaceMe::~GameMinimalReplaceMe()
 {
+    SAFE_RELEASE( m_pSprite );
+    SAFE_DELETE( m_pShader_VertexColor );
 }
 
 void GameMinimalReplaceMe::OneTimeInit()
 {
     GameCore::OneTimeInit();
+
+    // setup our shader.
+    m_pShader_VertexColor = MyNew ShaderGroup( MyNew Shader_Base(ShaderPass_Main), 0, 0 );
+    m_pShader_VertexColor->SetFileForAllPasses( "Data/Shaders/Shader_White" );
+
+    // create a sprite, it's small since I'm not using a transform down below.
+    m_pSprite = MyNew MySprite();
+    m_pSprite->Create( 0.1f, 0.1f, 0, 1, 0, 1, Justify_Center, true );
+    m_pSprite->SetShader( m_pShader_VertexColor );
 }
 
 void GameMinimalReplaceMe::Tick(double TimePassed)
@@ -39,14 +54,25 @@ void GameMinimalReplaceMe::OnDrawFrame()
 {
     GameCore::OnDrawFrame();
 
-    // no vbo or shader is set up, a white dot might appear at 0,0
-    //glPointSize( 10 );
-    glDrawArrays( GL_POINTS, 0, 1 );
+    glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
+
+    // draw the sprite... no transform, so coords are in clip space.
+    MyMatrix transform;
+    transform.SetIdentity();
+    transform.SetPosition( m_Position );
+
+    m_pSprite->Draw( &transform );
 }
 
 void GameMinimalReplaceMe::OnTouch(int action, int id, float x, float y, float pressure, float size)
 {
     GameCore::OnTouch( action, id, x, y, pressure, size );
+
+    // prefer 0,0 at bottom left.
+    y = m_WindowHeight - y;
+
+    m_Position.x = (x / m_WindowWidth) * 2 - 1;
+    m_Position.y = (y / m_WindowHeight) * 2 - 1;
 }
 
 void GameMinimalReplaceMe::OnButtons(GameCoreButtonActions action, GameCoreButtonIDs id)
