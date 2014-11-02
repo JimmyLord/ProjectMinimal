@@ -40,7 +40,7 @@ void GameMinimalReplaceMe::OnDrawFrame()
     GameCore::OnDrawFrame();
 
     // no vbo or shader is set up, a white dot might appear at 0,0
-    glPointSize( 10 );
+    //glPointSize( 10 );
     glDrawArrays( GL_POINTS, 0, 1 );
 }
 
