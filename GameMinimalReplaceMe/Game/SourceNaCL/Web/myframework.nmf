@@ -1,0 +1,6 @@
+{
+  "program": {
+    "x86-64": {"url": "MinimalReplaceMe_64_Release.nexe"},
+    "x86-32": {"url": "MinimalReplaceMe_x86_Release.nexe"}
+  }
+}
