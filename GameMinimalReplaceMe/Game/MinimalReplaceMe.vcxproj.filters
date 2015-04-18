@@ -84,9 +84,6 @@
     <ClCompile Include="SourceEmscripten\emMain.cpp">
       <Filter>Source - Platform\Source - Emscripten</Filter>
     </ClCompile>
-    <ClCompile Include="SourceEmscripten\esUtil.c">
-      <Filter>Source - Platform\Source - Emscripten</Filter>
-    </ClCompile>
     <ClCompile Include="SourceWP8\CubeRenderer.cpp">
       <Filter>Source - Platform\Source - WP8</Filter>
     </ClCompile>
@@ -115,9 +112,6 @@
     </ClInclude>
     <ClInclude Include="SourceAndroid\main.h">
       <Filter>Source - Platform\Source - Android</Filter>
-    </ClInclude>
-    <ClInclude Include="SourceEmscripten\esUtil.h">
-      <Filter>Source - Platform\Source - Emscripten</Filter>
     </ClInclude>
     <ClInclude Include="SourceWP8\BasicTimer.h">
       <Filter>Source - Platform\Source - WP8</Filter>

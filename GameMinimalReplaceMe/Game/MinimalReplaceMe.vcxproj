@@ -482,6 +482,7 @@
     <OutDir>$(SolutionDir)Output\$(PlatformName)\$(TargetName)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Output\Intermediate\$(PlatformName)\$(TargetName)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)_$(Configuration)</TargetName>
+    <EmbedManifest>true</EmbedManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|NaCl64'">
     <LinkIncremental>true</LinkIncremental>
@@ -509,6 +510,7 @@
     <OutDir>$(SolutionDir)Output\$(PlatformName)\$(TargetName)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Output\Intermediate\$(PlatformName)\$(TargetName)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)_$(Configuration)</TargetName>
+    <EmbedManifest>true</EmbedManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WxDebug|NaCl64'">
     <LinkIncremental>true</LinkIncremental>
@@ -536,6 +538,7 @@
     <OutDir>$(SolutionDir)Output\$(PlatformName)\$(TargetName)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Output\Intermediate\$(PlatformName)\$(TargetName)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)_$(Configuration)</TargetName>
+    <EmbedManifest>true</EmbedManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_64|NaCl64'">
     <LinkIncremental>true</LinkIncremental>
@@ -598,6 +601,7 @@
     <OutDir>$(SolutionDir)Output\$(PlatformName)\$(TargetName)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Output\Intermediate\$(PlatformName)\$(TargetName)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)_$(Configuration)</TargetName>
+    <EmbedManifest>true</EmbedManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|NaCl64'">
     <LinkIncremental>false</LinkIncremental>
@@ -625,6 +629,7 @@
     <OutDir>$(SolutionDir)Output\$(PlatformName)\$(TargetName)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Output\Intermediate\$(PlatformName)\$(TargetName)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)_$(Configuration)</TargetName>
+    <EmbedManifest>true</EmbedManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WxRelease|NaCl64'">
     <LinkIncremental>false</LinkIncremental>
@@ -652,6 +657,7 @@
     <OutDir>$(SolutionDir)Output\$(PlatformName)\$(TargetName)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)Output\Intermediate\$(PlatformName)\$(TargetName)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)_$(Configuration)</TargetName>
+    <EmbedManifest>true</EmbedManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_64|NaCl64'">
     <LinkIncremental>false</LinkIncremental>
@@ -713,7 +719,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>MYFW_WINDOWS;WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)../Framework/Box2D_v2.2.1;SourceCommon;$(wxwin)/include/msvc;$(wxwin)/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)../Framework/Box2D_v2.2.1;SourceCommon;$(SolutionDir)../wxWidgets/include/msvc;$(SolutionDir)../wxWidgets/include</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>GameCommonHeader.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
@@ -782,15 +788,15 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>MYFW_WINDOWS;WIN32;MYFW_USING_WX;WXUSINGDLL;wxMSVC_VERSION_AUTO;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)../Framework/Box2D_v2.2.1;SourceCommon;$(wxwin)/include/msvc;$(wxwin)/include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>MYFW_WINDOWS;WIN32;MYFW_USING_WX;wxMSVC_VERSION_AUTO;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)../Framework/Box2D_v2.2.1;SourceCommon;$(SolutionDir)../wxWidgets/include/msvc;$(SolutionDir)../wxWidgets/include</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>GameCommonHeader.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>pthreadVC2.lib;Ws2_32.lib;SDL_mixer.lib;SDL.lib;Box2D.lib;opengl32.lib;glu32.lib;MyFramework_$(Configuration).lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)Output\$(PlatformName)\MyFramework\$(Configuration);$(SolutionDir)../Framework/MyFramework/SourceWindows/SDL-1.2.15/lib/x86;$(SolutionDir)../Framework/MyFramework/SourceWindows/SDL_mixer-1.2.12/lib/x86;$(SolutionDir)../Framework/Box2D_v2.2.1/Build/vs2010/bin/Debug;$(SolutionDir)../Framework/MyFramework/SourceWindows/pthreads-w32-2-9-1/lib/x86;$(wxwin)/lib/vc100_dll</AdditionalLibraryDirectories>
+      <AdditionalDependencies>pthreadVC2.lib;Ws2_32.lib;SDL_mixer.lib;SDL.lib;Box2D.lib;opengl32.lib;glu32.lib;MyFramework_$(Configuration).lib;wxbase31ud.lib;wxmsw31ud_core.lib;wxmsw31ud_gl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Output\$(PlatformName)\MyFramework\$(Configuration);$(SolutionDir)../Framework/MyFramework/SourceWindows/SDL-1.2.15/lib/x86;$(SolutionDir)../Framework/MyFramework/SourceWindows/SDL_mixer-1.2.12/lib/x86;$(SolutionDir)../Framework/MyFramework/SourceWindows/pthreads-w32-2-9-1/lib/x86;$(SolutionDir)../wxWidgets/lib/vc100_lib;$(SolutionDir)../Framework/Box2D_v2.2.1/Build/vs2010/bin/Debug</AdditionalLibraryDirectories>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
     </Link>
   </ItemDefinitionGroup>
@@ -853,7 +859,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>MYFW_WINDOWS;WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)../Framework/Box2D_v2.2.1;SourceCommon;$(wxwin)/include/msvc;$(wxwin)/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)../Framework/Box2D_v2.2.1;SourceCommon;$(SolutionDir)../wxWidgets/include/msvc;$(SolutionDir)../wxWidgets/include</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>GameCommonHeader.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
@@ -1059,7 +1065,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>MYFW_WINDOWS;WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)../Framework/Box2D_v2.2.1;SourceCommon;$(wxwin)/include/msvc;$(wxwin)/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)../Framework/Box2D_v2.2.1;SourceCommon;$(SolutionDir)../wxWidgets/include/msvc;$(SolutionDir)../wxWidgets/include</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>GameCommonHeader.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
@@ -1144,8 +1150,8 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>MYFW_WINDOWS;WIN32;MYFW_USING_WX;WXUSINGDLL;wxMSVC_VERSION_AUTO;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)../Framework/Box2D_v2.2.1;SourceCommon;$(wxwin)/include/msvc;$(wxwin)/include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>MYFW_WINDOWS;WIN32;MYFW_USING_WX;wxMSVC_VERSION_AUTO;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)../Framework/Box2D_v2.2.1;SourceCommon;$(SolutionDir)../wxWidgets/include/msvc;$(SolutionDir)../wxWidgets/include</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>GameCommonHeader.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
@@ -1153,8 +1159,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>pthreadVC2.lib;Ws2_32.lib;SDL_mixer.lib;SDL.lib;Box2D.lib;opengl32.lib;glu32.lib;MyFramework_$(Configuration).lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)Output\$(PlatformName)\MyFramework\$(Configuration);$(SolutionDir)../Framework/MyFramework/SourceWindows/SDL-1.2.15/lib/x86;$(SolutionDir)../Framework/MyFramework/SourceWindows/SDL_mixer-1.2.12/lib/x86;$(SolutionDir)../Framework/Box2D_v2.2.1/Build/vs2010/bin/Release;$(SolutionDir)../Framework/MyFramework/SourceWindows/pthreads-w32-2-9-1/lib/x86;$(wxwin)/lib/vc100_dll</AdditionalLibraryDirectories>
+      <AdditionalDependencies>pthreadVC2.lib;Ws2_32.lib;SDL_mixer.lib;SDL.lib;Box2D.lib;opengl32.lib;glu32.lib;MyFramework_$(Configuration).lib;wxbase31u.lib;wxmsw31u_core.lib;wxmsw31u_gl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)Output\$(PlatformName)\MyFramework\$(Configuration);$(SolutionDir)../Framework/MyFramework/SourceWindows/SDL-1.2.15/lib/x86;$(SolutionDir)../Framework/MyFramework/SourceWindows/SDL_mixer-1.2.12/lib/x86;$(SolutionDir)../Framework/MyFramework/SourceWindows/pthreads-w32-2-9-1/lib/x86;$(SolutionDir)../wxWidgets/lib/vc100_lib;$(SolutionDir)../Framework/Box2D_v2.2.1/Build/vs2010/bin/Release</AdditionalLibraryDirectories>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
     </Link>
   </ItemDefinitionGroup>
@@ -1231,7 +1237,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>MYFW_WINDOWS;WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)../Framework/Box2D_v2.2.1;SourceCommon;$(wxwin)/include/msvc;$(wxwin)/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)../Framework/Box2D_v2.2.1;SourceCommon;$(SolutionDir)../wxWidgets/include/msvc;$(SolutionDir)../wxWidgets/include</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>GameCommonHeader.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
@@ -1601,32 +1607,6 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='WxRelease|NaCl64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='WxRelease|NaCl32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="SourceEmscripten\esUtil.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug_64|Android'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Android'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release_64|Android'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Android'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='WxDebug|Android'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='WxRelease|Android'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug_64|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug_64|NaCl64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug_64|NaCl32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|NaCl64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|NaCl32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release_64|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release_64|NaCl64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release_64|NaCl32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|NaCl64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|NaCl32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='WxDebug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='WxDebug|NaCl64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='WxDebug|NaCl32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='WxRelease|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='WxRelease|NaCl64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='WxRelease|NaCl32'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="SourceNaCL\MainModule.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug_64|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug_64|Emscripten'">true</ExcludedFromBuild>
@@ -1859,32 +1839,6 @@
     </ClInclude>
     <ClInclude Include="SourceCommon\Core\GameMinimalReplaceMe.h" />
     <ClInclude Include="SourceCommon\GameCommonHeader.h" />
-    <ClInclude Include="SourceEmscripten\esUtil.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug_64|Android'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Android'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release_64|Android'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Android'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='WxDebug|Android'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='WxRelease|Android'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug_64|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug_64|NaCl64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug_64|NaCl32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|NaCl64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|NaCl32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release_64|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release_64|NaCl64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release_64|NaCl32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|NaCl64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|NaCl32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='WxDebug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='WxDebug|NaCl64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='WxDebug|NaCl32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='WxRelease|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='WxRelease|NaCl64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='WxRelease|NaCl32'">true</ExcludedFromBuild>
-    </ClInclude>
     <ClInclude Include="SourceIOS\main.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug_64|Android'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Android'">true</ExcludedFromBuild>
