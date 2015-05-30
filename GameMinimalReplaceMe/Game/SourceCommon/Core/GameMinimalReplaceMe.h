@@ -14,6 +14,7 @@ class GameMinimalReplaceMe : public GameCore
 {
 public:
     MyFileObject* m_pShaderFile_White;
+    MaterialDefinition* m_pMaterialWhite;
     ShaderGroup* m_pShader_White;
     MySprite* m_pSprite;
 

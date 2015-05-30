@@ -24,6 +24,8 @@ GameMinimalReplaceMe::~GameMinimalReplaceMe()
 
     SAFE_RELEASE( m_pShader_White );
     SAFE_RELEASE( m_pShaderFile_White );
+
+    SAFE_RELEASE( m_pMaterialWhite );
 }
 
 void GameMinimalReplaceMe::OneTimeInit()
@@ -32,12 +34,16 @@ void GameMinimalReplaceMe::OneTimeInit()
 
     // setup our shader.
     m_pShaderFile_White = RequestFile( "Data/Shaders/Shader_White.glsl" );
-    m_pShader_White = MyNew ShaderGroup( m_pShaderFile_White, "White" );
+    m_pShader_White = MyNew ShaderGroup( m_pShaderFile_White );
+    
+    // create a material with that shader.
+    m_pMaterialWhite = g_pMaterialManager->CreateMaterial();
+    m_pMaterialWhite->SetShader( m_pShader_White );
 
     // create a sprite, it's small since I'm not using a transform down below.
     m_pSprite = MyNew MySprite();
     m_pSprite->Create( 0.1f, 0.1f, 0, 1, 0, 1, Justify_Center, true );
-    m_pSprite->SetShader( m_pShader_White );
+    m_pSprite->SetMaterial( m_pMaterialWhite );
 }
 
 double GameMinimalReplaceMe::Tick(double TimePassed)
