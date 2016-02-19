@@ -1,6 +1,3 @@
 [submodule "Framework"]
 	path = Framework
 	url = https://github.com/JimmyLord/MyFramework.git
-[submodule "wxWidgets"]
-	path = wxWidgets
-	url = https://github.com/wxWidgets/wxWidgets.git

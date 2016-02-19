@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2012-2015 Jimmy Lord http://www.flatheadgames.com
+// Copyright (c) 2012-2016 Jimmy Lord http://www.flatheadgames.com
 //
 // This software is provided 'as-is', without any express or implied warranty.  In no event will the authors be held liable for any damages arising from the use of this software.
 // Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions:
@@ -26,10 +26,10 @@ public:
 
     virtual void OneTimeInit();
     virtual double Tick(double TimePassed);
-    virtual void OnDrawFrame();
+    virtual void OnDrawFrame(unsigned int canvasid);
 
-    virtual void OnTouch(int action, int id, float x, float y, float pressure, float size);
-    virtual void OnButtons(GameCoreButtonActions action, GameCoreButtonIDs id);
+    virtual bool OnTouch(int action, int id, float x, float y, float pressure, float size);
+    virtual bool OnButtons(GameCoreButtonActions action, GameCoreButtonIDs id);
 };
 
 #endif //__GameMinimalReplaceMe_H__

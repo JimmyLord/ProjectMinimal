@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2012-2015 Jimmy Lord http://www.flatheadgames.com
+// Copyright (c) 2012-2016 Jimmy Lord http://www.flatheadgames.com
 //
 // This software is provided 'as-is', without any express or implied warranty.  In no event will the authors be held liable for any damages arising from the use of this software.
 // Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions:
@@ -41,7 +41,7 @@ void GameMinimalReplaceMe::OneTimeInit()
     m_pMaterialWhite->SetShader( m_pShader_White );
 
     // create a sprite, it's small since I'm not using a transform down below.
-    m_pSprite = MyNew MySprite();
+    m_pSprite = MyNew MySprite( false );
     m_pSprite->Create( 0.1f, 0.1f, 0, 1, 0, 1, Justify_Center, true );
     m_pSprite->SetMaterial( m_pMaterialWhite );
 }
@@ -51,10 +51,11 @@ double GameMinimalReplaceMe::Tick(double TimePassed)
     return GameCore::Tick( TimePassed );
 }
 
-void GameMinimalReplaceMe::OnDrawFrame()
+void GameMinimalReplaceMe::OnDrawFrame(unsigned int canvasid)
 {
-    GameCore::OnDrawFrame();
+    GameCore::OnDrawFrame( 0 );
 
+    glClearColor( 0, 0, 0.2f, 1 );
     glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
 
     // draw the sprite... no transform, so coords are in clip space.
@@ -65,18 +66,21 @@ void GameMinimalReplaceMe::OnDrawFrame()
     m_pSprite->Draw( &transform );
 }
 
-void GameMinimalReplaceMe::OnTouch(int action, int id, float x, float y, float pressure, float size)
+bool GameMinimalReplaceMe::OnTouch(int action, int id, float x, float y, float pressure, float size)
 {
-    GameCore::OnTouch( action, id, x, y, pressure, size );
+    if( GameCore::OnTouch( action, id, x, y, pressure, size ) )
+        return true;
 
     // prefer 0,0 at bottom left.
     y = m_WindowHeight - y;
 
     m_Position.x = (x / m_WindowWidth) * 2 - 1;
     m_Position.y = (y / m_WindowHeight) * 2 - 1;
+
+    return false;
 }
 
-void GameMinimalReplaceMe::OnButtons(GameCoreButtonActions action, GameCoreButtonIDs id)
+bool GameMinimalReplaceMe::OnButtons(GameCoreButtonActions action, GameCoreButtonIDs id)
 {
-    GameCore::OnButtons( action, id );
+    return GameCore::OnButtons( action, id );
 }
