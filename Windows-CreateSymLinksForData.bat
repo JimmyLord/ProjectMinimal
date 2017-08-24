@@ -1,11 +1,18 @@
-@echo This batch file will link a data folder from Engine to GameEmptyReplaceMe/Game
+@echo This batch file will link the game and engine data folders to the Android and NaCl build folders
 @echo --
 
-cd GameMinimalReplaceMe/Game
+pushd GameEmptyReplaceMe\Game\Data
+mklink /J "DataEngine" "../../../Engine/DataEngine"
+popd
 
-cd SourceAndroid/AndroidApk
+pushd GameEmptyReplaceMe\Game\SourceAndroid\AndroidStudio\app\src\main
 mkdir assets
 cd assets
-mklink /J "Data" "../../../Data"
+mklink /J "Data" "../../../../../../Data"
+popd
+
+pushd GameEmptyReplaceMe\Game\SourceNaCL\Web
+mklink /J "Data" "../../Data"
+popd
 
 pause

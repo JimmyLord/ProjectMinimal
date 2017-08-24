@@ -63,7 +63,7 @@ void GameMinimalReplaceMe::OnDrawFrame(unsigned int canvasid)
     transform.SetIdentity();
     transform.SetTranslation( m_Position );
 
-    m_pSprite->Draw( &transform );
+    m_pSprite->Draw( &transform, 0 );
 }
 
 bool GameMinimalReplaceMe::OnTouch(int action, int id, float x, float y, float pressure, float size)
