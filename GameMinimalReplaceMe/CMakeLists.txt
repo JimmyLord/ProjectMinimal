@@ -10,7 +10,7 @@ list( REMOVE_ITEM sourcefiles "${CMAKE_SOURCE_DIR}/Game/SourceLinux/LinuxMainWx.
 add_executable( ProjectMinimal ${sourcefiles} )
 
 target_include_directories( ProjectMinimal PRIVATE "Game/SourceCommon" "Game/SourceLinux" )
-target_compile_definitions( ProjectMinimal PRIVATE MYFW_LINUX=1 )
+target_compile_definitions( ProjectMinimal PRIVATE _DEBUG=1 MYFW_LINUX=1 )
 
 target_include_directories( ProjectMinimal PUBLIC
     "../Framework/MyFramework/SourceCommon"
