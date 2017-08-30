@@ -6,13 +6,13 @@ fi
 
 BuildConfiguration="$1"
 
-echo "========== Configuration: $BuildConfiguration =========="
+echo "$(tput setaf 3)==> Configuration: $BuildConfiguration$(tput sgr0)"
 
 pushd ../Framework > /dev/null
     ./build.sh $BuildConfiguration
 popd > /dev/null
 
-echo "========== Building MinimalReplaceMe =========="
+echo "$(tput setaf 2)==> Building MinimalReplaceMe$(tput sgr0)"
 
 if [ ! -d "build" ]; then
     mkdir build
