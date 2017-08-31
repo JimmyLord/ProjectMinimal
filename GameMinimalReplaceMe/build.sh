@@ -1,18 +1,43 @@
 
-if [[ ! $1 =~ ^(Debug|Release|wxDebug|wxRelease)$ ]]; then
+# Parse command line arguments.
+CleanBuild=dontclean
+BuildConfiguration=none
+
+for var in "$@"
+do
+    if [[ $var =~ ^(Debug|Release|wxDebug|wxRelease)$ ]]; then
+        BuildConfiguration=$var;
+    fi
+    if [[ $var = clean ]]; then
+        CleanBuild=clean;
+    fi
+done
+
+# Exit if a valid build config wasn't specified.
+if [[ ! $BuildConfiguration =~ ^(Debug|Release|wxDebug|wxRelease)$ ]]; then
     echo "Specify a build configuration: Debug, Release, wxDebug, wxRelease"
+    echo "add 'clean' to clean that configuration"
     exit 2
 fi
 
-BuildConfiguration="$1"
-
+# Output a title for the build.
 echo "$(tput setaf 3)==> Configuration: $BuildConfiguration$(tput sgr0)"
 
+# Build Dependents.
 pushd ../Framework > /dev/null
-    ./build.sh $BuildConfiguration
+    ./build.sh $BuildConfiguration $CleanBuild
 popd > /dev/null
 
-echo "$(tput setaf 2)==> Building MinimalReplaceMe$(tput sgr0)"
+# Clean and exit.
+if [[ $CleanBuild == clean ]]; then
+    echo "$(tput setaf 5)==> Cleaning MinimalReplaceMe$(tput sgr0)"
+    rm -r build/$BuildConfiguration
+    exit 1
+fi
+
+# Build MinimalReplaceMe.
+let NumJobs=$(nproc)*2
+echo "$(tput setaf 2)==> Building MinimalReplaceMe$ (make -j$NumJobs)$(tput sgr0)"
 
 if [ ! -d "build" ]; then
     mkdir build
@@ -26,5 +51,5 @@ if [ ! -d build/$BuildConfiguration ]; then
 fi
 
 pushd build/$BuildConfiguration > /dev/null
-make
+    make -j$NumJobs
 popd > /dev/null
