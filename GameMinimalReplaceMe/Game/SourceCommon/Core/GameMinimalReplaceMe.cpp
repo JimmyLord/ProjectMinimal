@@ -56,6 +56,7 @@ void GameMinimalReplaceMe::OnDrawFrame(unsigned int canvasid)
     GameCore::OnDrawFrame( 0 );
 
     glClearColor( 0, 0, 0.2f, 1 );
+    glClearDepth( 1 );
     glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
 
     // draw the sprite... no transform, so coords are in clip space.
@@ -63,7 +64,29 @@ void GameMinimalReplaceMe::OnDrawFrame(unsigned int canvasid)
     transform.SetIdentity();
     transform.SetTranslation( m_Position );
 
+    // BaseShader* pShader = m_pShader_White->GetShader( ShaderPass_Main );
+    // if( pShader->m_Initialized || pShader->LoadAndCompile() )
+    // {
+    //     float verts[] = { 0.2f, -0.8f,   -0.2f, -0.85f };
+
+    //     glBindVertexArray( 0 );
+    //     glBindBuffer( GL_ARRAY_BUFFER, 0 );
+    //     glBindBuffer( GL_ELEMENT_ARRAY_BUFFER, 0 );
+
+    //     int loc = glGetAttribLocation( pShader->m_ProgramHandle, "a_Position" );
+    //     glVertexAttribPointer( loc, 2, GL_FLOAT, false, 8, verts );
+    //     glEnableVertexAttribArray( loc );
+
+    //     glUseProgram( pShader->m_ProgramHandle );
+
+    //     glPointSize( 10 );
+    //     glDrawArrays( GL_POINTS, 0, 2 );
+    //     glDrawArrays( GL_LINES, 0, 2 );
+    // }
+
     m_pSprite->Draw( &transform, 0 );
+
+    checkGlError( "After sprite draw\n" );
 }
 
 bool GameMinimalReplaceMe::OnTouch(int action, int id, float x, float y, float pressure, float size)

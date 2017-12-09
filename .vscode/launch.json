@@ -6,12 +6,17 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceRoot}/GameMinimalReplaceMe/build/Debug/ProjectMinimal",
+            "cwd": "${workspaceRoot}/GameMinimalReplaceMe/Game",
+            "MIMode": "gdb",
+            "osx": {
+                "program": "${workspaceRoot}/GameMinimalReplaceMe/Output/MinimalReplaceMe/Build/Products/Debug/MinimalReplaceMe-OSX.app/Contents/MacOS/MinimalReplaceMe-OSX",
+                "cwd": "${workspaceRoot}/GameMinimalReplaceMe/Game",
+                "MIMode": "lldb",
+            },
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceRoot}/GameMinimalReplaceMe/Game",
             "environment": [],
             "externalConsole": true,
-            "MIMode": "gdb",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",

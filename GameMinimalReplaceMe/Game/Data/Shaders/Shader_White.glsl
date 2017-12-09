@@ -1,4 +1,4 @@
-// Shader_VertexColor.glsl
+// Shader_White.glsl
 
 #ifdef WIN32
 #define lowp
