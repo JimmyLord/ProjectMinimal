@@ -82,7 +82,7 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
 
     if( g_pGameCore == 0 )
     {
-        g_pGameCore = MyNew GameEmptyReplaceMe;
+        g_pGameCore = MyNew GameMinimalReplaceMe;
         g_pGameCore->OnSurfaceCreated();
         g_pGameCore->OnSurfaceChanged( 0, 0, 400, 600 );
         g_pGameCore->OneTimeInit();

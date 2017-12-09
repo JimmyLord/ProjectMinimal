@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04316D381FD79226009DCA2E /* GameMinimalReplaceMe.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1D5F5DC16DEAAFC00664F71 /* GameMinimalReplaceMe.cpp */; };
+		04316D391FD79226009DCA2E /* GameCommonHeader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1D5F5E816DEAAFC00664F71 /* GameCommonHeader.cpp */; };
+		04316D511FD792E1009DCA2E /* libMyFramework-OSX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04316D521FD792E1009DCA2E /* libMyFramework-OSX.a */; };
+		04316D551FD82737009DCA2E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF267D04151B68C6009458AE /* Foundation.framework */; };
+		04316D561FD82737009DCA2E /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF27F4B91529E957000F8A5F /* OpenAL.framework */; };
+		04316D5C1FD82738009DCA2E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04316D571FD82737009DCA2E /* CoreData.framework */; };
+		04316D5D1FD82738009DCA2E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04316D581FD82737009DCA2E /* Cocoa.framework */; };
+		04316D5E1FD82738009DCA2E /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04316D591FD82737009DCA2E /* AppKit.framework */; };
+		04316D5F1FD82738009DCA2E /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04316D5A1FD82737009DCA2E /* CoreVideo.framework */; };
+		04316D601FD82738009DCA2E /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04316D5B1FD82738009DCA2E /* OpenGL.framework */; };
+		04316D6C1FD828D1009DCA2E /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 04316D631FD828D0009DCA2E /* AppDelegate.mm */; };
+		04316D6E1FD828D1009DCA2E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04316D651FD828D0009DCA2E /* Info.plist */; };
+		04316D6F1FD828D1009DCA2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04316D661FD828D0009DCA2E /* main.m */; };
+		04316D701FD828D1009DCA2E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04316D671FD828D0009DCA2E /* MainMenu.xib */; };
+		04316D711FD828D1009DCA2E /* MyOpenGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 04316D691FD828D0009DCA2E /* MyOpenGLView.mm */; };
+		04316D741FD82A37009DCA2E /* MinimalReplaceMe-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1D5F60116DEAAFC00664F71 /* MinimalReplaceMe-Info.plist */; };
+		04316D761FD88318009DCA2E /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF267D08151B68C6009458AE /* GLKit.framework */; };
+		04316D781FD8832D009DCA2E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04316D771FD8832C009DCA2E /* QuartzCore.framework */; };
 		045EDF1E1A06823C007912CA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045EDF1D1A06823C007912CA /* StoreKit.framework */; };
 		A11DC47B160D2EC1006C837D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A11DC478160D2EC1006C837D /* AudioToolbox.framework */; };
 		A11DC47C160D2EC1006C837D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A11DC479160D2EC1006C837D /* AVFoundation.framework */; };
@@ -23,10 +41,29 @@
 		BF267D09151B68C6009458AE /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF267D08151B68C6009458AE /* GLKit.framework */; };
 		BF267D0B151B68C6009458AE /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF267D0A151B68C6009458AE /* OpenGLES.framework */; };
 		BF27F4BA1529E957000F8A5F /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF27F4B91529E957000F8A5F /* OpenAL.framework */; };
-		BF71E9B9151B9F94009F0CD9 /* libMyFramework.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF71E9B8151B9F94009F0CD9 /* libMyFramework.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04316D4F1FD79226009DCA2E /* MinimalReplaceMe-OSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MinimalReplaceMe-OSX.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04316D521FD792E1009DCA2E /* libMyFramework-OSX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libMyFramework-OSX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04316D531FD81ED5009DCA2E /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		04316D571FD82737009DCA2E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		04316D581FD82737009DCA2E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		04316D591FD82737009DCA2E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		04316D5A1FD82737009DCA2E /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		04316D5B1FD82738009DCA2E /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		04316D621FD828D0009DCA2E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		04316D631FD828D0009DCA2E /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
+		04316D641FD828D0009DCA2E /* Info-wx.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-wx.plist"; sourceTree = "<group>"; };
+		04316D651FD828D0009DCA2E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04316D661FD828D0009DCA2E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		04316D671FD828D0009DCA2E /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		04316D681FD828D0009DCA2E /* MyOpenGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOpenGLView.h; sourceTree = "<group>"; };
+		04316D691FD828D0009DCA2E /* MyOpenGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MyOpenGLView.mm; sourceTree = "<group>"; };
+		04316D6A1FD828D0009DCA2E /* OSXMainWx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OSXMainWx.cpp; sourceTree = "<group>"; };
+		04316D6B1FD828D0009DCA2E /* OSXMainWx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSXMainWx.h; sourceTree = "<group>"; };
+		04316D751FD88180009DCA2E /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; };
+		04316D771FD8832C009DCA2E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		045EDF1D1A06823C007912CA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
 		A11DC478160D2EC1006C837D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		A11DC479160D2EC1006C837D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -41,23 +78,38 @@
 		A1D5F60816DEAAFC00664F71 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		A1D5F60916DEAAFC00664F71 /* main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
 		A1D5F60A16DEAAFC00664F71 /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
-		BF267CFE151B68C6009458AE /* MinimalReplaceMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinimalReplaceMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF267CFE151B68C6009458AE /* MinimalReplaceMe-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MinimalReplaceMe-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF267D02151B68C6009458AE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BF267D04151B68C6009458AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BF267D06151B68C6009458AE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		BF267D08151B68C6009458AE /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		BF267D0A151B68C6009458AE /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF27F4B91529E957000F8A5F /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
-		BF71E9B8151B9F94009F0CD9 /* libMyFramework.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMyFramework.a; path = "../../Framework/MyFramework/build/Release-iphoneos/libMyFramework.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		04316D3B1FD79226009DCA2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04316D511FD792E1009DCA2E /* libMyFramework-OSX.a in Frameworks */,
+				04316D781FD8832D009DCA2E /* QuartzCore.framework in Frameworks */,
+				04316D761FD88318009DCA2E /* GLKit.framework in Frameworks */,
+				04316D5C1FD82738009DCA2E /* CoreData.framework in Frameworks */,
+				04316D5D1FD82738009DCA2E /* Cocoa.framework in Frameworks */,
+				04316D5E1FD82738009DCA2E /* AppKit.framework in Frameworks */,
+				04316D5F1FD82738009DCA2E /* CoreVideo.framework in Frameworks */,
+				04316D601FD82738009DCA2E /* OpenGL.framework in Frameworks */,
+				04316D551FD82737009DCA2E /* Foundation.framework in Frameworks */,
+				04316D561FD82737009DCA2E /* OpenAL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BF267CFB151B68C6009458AE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BF27F4BA1529E957000F8A5F /* OpenAL.framework in Frameworks */,
-				BF71E9B9151B9F94009F0CD9 /* libMyFramework.a in Frameworks */,
 				BF267D03151B68C6009458AE /* UIKit.framework in Frameworks */,
 				BF267D05151B68C6009458AE /* Foundation.framework in Frameworks */,
 				BF267D07151B68C6009458AE /* CoreGraphics.framework in Frameworks */,
@@ -73,6 +125,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04316D611FD828D0009DCA2E /* SourceOSX */ = {
+			isa = PBXGroup;
+			children = (
+				04316D621FD828D0009DCA2E /* AppDelegate.h */,
+				04316D631FD828D0009DCA2E /* AppDelegate.mm */,
+				04316D641FD828D0009DCA2E /* Info-wx.plist */,
+				04316D651FD828D0009DCA2E /* Info.plist */,
+				04316D661FD828D0009DCA2E /* main.m */,
+				04316D671FD828D0009DCA2E /* MainMenu.xib */,
+				04316D681FD828D0009DCA2E /* MyOpenGLView.h */,
+				04316D691FD828D0009DCA2E /* MyOpenGLView.mm */,
+				04316D6A1FD828D0009DCA2E /* OSXMainWx.cpp */,
+				04316D6B1FD828D0009DCA2E /* OSXMainWx.h */,
+			);
+			path = SourceOSX;
+			sourceTree = "<group>";
+		};
 		A1D5F5D616DEAAFC00664F71 /* SourceCommon */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,9 +177,10 @@
 		BF267CF3151B68C6009458AE = {
 			isa = PBXGroup;
 			children = (
+				04316D751FD88180009DCA2E /* Data */,
+				04316D611FD828D0009DCA2E /* SourceOSX */,
 				A1D5F5D616DEAAFC00664F71 /* SourceCommon */,
 				A1D5F5FE16DEAAFC00664F71 /* SourceIOS */,
-				BF71E9B8151B9F94009F0CD9 /* libMyFramework.a */,
 				BF267D01151B68C6009458AE /* Frameworks */,
 				BF267CFF151B68C6009458AE /* Products */,
 			);
@@ -119,7 +189,8 @@
 		BF267CFF151B68C6009458AE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BF267CFE151B68C6009458AE /* MinimalReplaceMe.app */,
+				BF267CFE151B68C6009458AE /* MinimalReplaceMe-iOS.app */,
+				04316D4F1FD79226009DCA2E /* MinimalReplaceMe-OSX.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,6 +198,14 @@
 		BF267D01151B68C6009458AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04316D521FD792E1009DCA2E /* libMyFramework-OSX.a */,
+				04316D771FD8832C009DCA2E /* QuartzCore.framework */,
+				04316D591FD82737009DCA2E /* AppKit.framework */,
+				04316D581FD82737009DCA2E /* Cocoa.framework */,
+				04316D571FD82737009DCA2E /* CoreData.framework */,
+				04316D5A1FD82737009DCA2E /* CoreVideo.framework */,
+				04316D5B1FD82738009DCA2E /* OpenGL.framework */,
+				04316D531FD81ED5009DCA2E /* CoreFoundation.framework */,
 				045EDF1D1A06823C007912CA /* StoreKit.framework */,
 				A11DC478160D2EC1006C837D /* AudioToolbox.framework */,
 				A11DC479160D2EC1006C837D /* AVFoundation.framework */,
@@ -144,9 +223,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BF267CFD151B68C6009458AE /* MinimalReplaceMe */ = {
+		04316D361FD79226009DCA2E /* MinimalReplaceMe-OSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BF267D27151B68C6009458AE /* Build configuration list for PBXNativeTarget "MinimalReplaceMe" */;
+			buildConfigurationList = 04316D4C1FD79226009DCA2E /* Build configuration list for PBXNativeTarget "MinimalReplaceMe-OSX" */;
+			buildPhases = (
+				04316D371FD79226009DCA2E /* Sources */,
+				04316D3B1FD79226009DCA2E /* Frameworks */,
+				04316D471FD79226009DCA2E /* Resources */,
+				04316D4B1FD79226009DCA2E /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MinimalReplaceMe-OSX";
+			productName = MinimalReplaceMe;
+			productReference = 04316D4F1FD79226009DCA2E /* MinimalReplaceMe-OSX.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BF267CFD151B68C6009458AE /* MinimalReplaceMe-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF267D27151B68C6009458AE /* Build configuration list for PBXNativeTarget "MinimalReplaceMe-iOS" */;
 			buildPhases = (
 				BF267CFA151B68C6009458AE /* Sources */,
 				BF267CFB151B68C6009458AE /* Frameworks */,
@@ -157,9 +254,9 @@
 			);
 			dependencies = (
 			);
-			name = MinimalReplaceMe;
+			name = "MinimalReplaceMe-iOS";
 			productName = MinimalReplaceMe;
-			productReference = BF267CFE151B68C6009458AE /* MinimalReplaceMe.app */;
+			productReference = BF267CFE151B68C6009458AE /* MinimalReplaceMe-iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -182,12 +279,22 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BF267CFD151B68C6009458AE /* MinimalReplaceMe */,
+				BF267CFD151B68C6009458AE /* MinimalReplaceMe-iOS */,
+				04316D361FD79226009DCA2E /* MinimalReplaceMe-OSX */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		04316D471FD79226009DCA2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04316D6E1FD828D1009DCA2E /* Info.plist in Resources */,
+				04316D701FD828D1009DCA2E /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BF267CFC151B68C6009458AE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -195,12 +302,27 @@
 				A1D5F62116DEAAFC00664F71 /* InfoPlist.strings in Resources */,
 				A1D5F62216DEAAFC00664F71 /* ViewController_iPad.xib in Resources */,
 				A1D5F62316DEAAFC00664F71 /* ViewController_iPhone.xib in Resources */,
+				04316D741FD82A37009DCA2E /* MinimalReplaceMe-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		04316D4B1FD79226009DCA2E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "touch -cm ${SRCROOT}/Data";
+			showEnvVarsInLog = 0;
+		};
 		BF71EB1A151BFE01009F0CD9 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -217,6 +339,18 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		04316D371FD79226009DCA2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04316D381FD79226009DCA2E /* GameMinimalReplaceMe.cpp in Sources */,
+				04316D6C1FD828D1009DCA2E /* AppDelegate.mm in Sources */,
+				04316D711FD828D1009DCA2E /* MyOpenGLView.mm in Sources */,
+				04316D6F1FD828D1009DCA2E /* main.m in Sources */,
+				04316D391FD79226009DCA2E /* GameCommonHeader.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BF267CFA151B68C6009458AE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -257,75 +391,59 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		04316D4D1FD79226009DCA2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"MYFW_OSX=1",
+				);
+				INFOPLIST_FILE = SourceOSX/Info.plist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		04316D4E1FD79226009DCA2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"MYFW_OSX=1",
+				);
+				INFOPLIST_FILE = SourceOSX/Info.plist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		BF267D25151B68C6009458AE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"_DEBUG=1",
-					"MYFW_IOS=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = "_DEBUG=1";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = ". ../../Framework/Libraries/b2Settings ../../Framework/Libraries/Box2D/Box2D";
 			};
 			name = Debug;
 		};
 		BF267D26151B68C6009458AE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"MYFW_IOS=1",
-					"$(inherited)",
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
+				USER_HEADER_SEARCH_PATHS = ". ../../Framework/Libraries/b2Settings ../../Framework/Libraries/Box2D/Box2D";
 			};
 			name = Release;
 		};
@@ -340,14 +458,17 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SourceIOS/MinimalReplaceMe-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"MYFW_IOS=1",
+				);
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = "SourceIOS/MinimalReplaceMe-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				PRODUCT_NAME = MinimalReplaceMe;
+				PRODUCT_NAME = "MinimalReplaceMe-iOS";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "./SourceCommon .";
-				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
@@ -362,20 +483,32 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SourceIOS/MinimalReplaceMe-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"MYFW_IOS=1",
+				);
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = "SourceIOS/MinimalReplaceMe-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				PRODUCT_NAME = MinimalReplaceMe;
+				PRODUCT_NAME = "MinimalReplaceMe-iOS";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "./SourceCommon .";
-				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		04316D4C1FD79226009DCA2E /* Build configuration list for PBXNativeTarget "MinimalReplaceMe-OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04316D4D1FD79226009DCA2E /* Debug */,
+				04316D4E1FD79226009DCA2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BF267CF8151B68C6009458AE /* Build configuration list for PBXProject "MinimalReplaceMe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -385,7 +518,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BF267D27151B68C6009458AE /* Build configuration list for PBXNativeTarget "MinimalReplaceMe" */ = {
+		BF267D27151B68C6009458AE /* Build configuration list for PBXNativeTarget "MinimalReplaceMe-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BF267D28151B68C6009458AE /* Debug */,
