@@ -11,7 +11,7 @@
             "osx": {
                 "program": "${workspaceRoot}/GameMinimalReplaceMe/Output/MinimalReplaceMe/Build/Products/Debug/MinimalReplaceMe-OSX.app/Contents/MacOS/MinimalReplaceMe-OSX",
                 "cwd": "${workspaceRoot}/GameMinimalReplaceMe/Game",
-                "MIMode": "lldb",
+                "MIMode": "lldb"
             },
             "args": [],
             "stopAtEntry": false,

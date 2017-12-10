@@ -8,7 +8,7 @@
             "type": "shell",
             "command": "cd GameMinimalReplaceMe && ./build.sh Debug",
             "osx": {
-                "command": "cd GameMinimalReplaceMe && xcodebuild -scheme MinimalReplaceMe-OSX build",
+                "command": "cd GameMinimalReplaceMe && xcodebuild -scheme MinimalReplaceMe-OSX build"
             },
             "group": "build",
             "problemMatcher": [
@@ -20,7 +20,7 @@
             "type": "shell",
             "command": "cd GameMinimalReplaceMe && ./build.sh wxDebug",
             "osx": {
-                "command": "cd GameMinimalReplaceMe && xcodebuild -scheme MinimalReplaceMe-wx build",
+                "command": "cd GameMinimalReplaceMe && xcodebuild -scheme MinimalReplaceMe-wx build"
             },
             "group": "build",
             "problemMatcher": [
