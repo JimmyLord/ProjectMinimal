@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2012-2016 Jimmy Lord http://www.flatheadgames.com
+// Copyright (c) 2012-2018 Jimmy Lord http://www.flatheadgames.com
 //
 // This software is provided 'as-is', without any express or implied warranty.  In no event will the authors be held liable for any damages arising from the use of this software.
 // Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions:
@@ -11,8 +11,6 @@
 
 GameMinimalReplaceMe::GameMinimalReplaceMe()
 {
-    m_pShaderFile_White = 0;
-    m_pShader_White = 0;
     m_pSprite = 0;
 
     m_Position.Set( 0, 0, 0 );
@@ -20,73 +18,51 @@ GameMinimalReplaceMe::GameMinimalReplaceMe()
 
 GameMinimalReplaceMe::~GameMinimalReplaceMe()
 {
-    SAFE_RELEASE( m_pSprite );
-
-    SAFE_RELEASE( m_pShader_White );
-    SAFE_RELEASE( m_pShaderFile_White );
-
-    SAFE_RELEASE( m_pMaterialWhite );
+    m_pSprite->Release();
 }
 
 void GameMinimalReplaceMe::OneTimeInit()
 {
     GameCore::OneTimeInit();
 
-    // setup our shader.
-    m_pShaderFile_White = RequestFile( "Data/Shaders/Shader_White.glsl" );
-    m_pShader_White = MyNew ShaderGroup( m_pShaderFile_White );
-    
-    // create a material with that shader.
-    m_pMaterialWhite = g_pMaterialManager->CreateMaterial();
-    m_pMaterialWhite->SetShader( m_pShader_White );
+    // Create a shader group and a material with that shader.
+    ShaderGroup* pShader_White = MyNew ShaderGroup( "Data/Shaders/Shader_White.glsl" );
+    MaterialDefinition* pMaterialWhite = g_pMaterialManager->CreateMaterial();
+    pMaterialWhite->SetShader( pShader_White );
 
-    // create a sprite, it's small since I'm not using a transform down below.
+    // Create a sprite, it's small since there's no camera or projection down below.
     m_pSprite = MyNew MySprite( false );
     m_pSprite->Create( 0.1f, 0.1f, 0, 1, 0, 1, Justify_Center, true );
-    m_pSprite->SetMaterial( m_pMaterialWhite );
+    m_pSprite->SetMaterial( pMaterialWhite );
+
+    // Release the shader and material.
+    pMaterialWhite->Release();
+    pShader_White->Release();
 }
 
-double GameMinimalReplaceMe::Tick(double TimePassed)
+float GameMinimalReplaceMe::Tick(float deltaTime)
 {
-    return GameCore::Tick( TimePassed );
+    return GameCore::Tick( deltaTime );
 }
 
 void GameMinimalReplaceMe::OnDrawFrame(unsigned int canvasid)
 {
+    checkGlError( "Start of OnDrawFrame.\n" );
+
     GameCore::OnDrawFrame( 0 );
 
+    // Set Clear color to dark blue and clear the screen.
     glClearColor( 0, 0, 0.2f, 1 );
     glClearDepth( 1 );
     glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
 
-    // draw the sprite... no transform, so coords are in clip space.
+    // Draw the sprite. No camera or projection, so coords are in clip space.
     MyMatrix transform;
-    transform.SetIdentity();
-    transform.SetTranslation( m_Position );
+    transform.CreateTranslation( m_Position );
 
-    // BaseShader* pShader = m_pShader_White->GetShader( ShaderPass_Main );
-    // if( pShader->m_Initialized || pShader->LoadAndCompile() )
-    // {
-    //     float verts[] = { 0.2f, -0.8f,   -0.2f, -0.85f };
+    m_pSprite->Draw( 0, 0, 0, &transform, 0, 0, 0, 0, 0, 0, 0, 0, false );
 
-    //     glBindVertexArray( 0 );
-    //     glBindBuffer( GL_ARRAY_BUFFER, 0 );
-    //     glBindBuffer( GL_ELEMENT_ARRAY_BUFFER, 0 );
-
-    //     int loc = glGetAttribLocation( pShader->m_ProgramHandle, "a_Position" );
-    //     glVertexAttribPointer( loc, 2, GL_FLOAT, false, 8, verts );
-    //     glEnableVertexAttribArray( loc );
-
-    //     glUseProgram( pShader->m_ProgramHandle );
-
-    //     glPointSize( 10 );
-    //     glDrawArrays( GL_POINTS, 0, 2 );
-    //     glDrawArrays( GL_LINES, 0, 2 );
-    // }
-
-    m_pSprite->Draw( &transform, 0 );
-
-    checkGlError( "After sprite draw\n" );
+    checkGlError( "After sprite draw.\n" );
 }
 
 bool GameMinimalReplaceMe::OnTouch(int action, int id, float x, float y, float pressure, float size)
@@ -94,7 +70,7 @@ bool GameMinimalReplaceMe::OnTouch(int action, int id, float x, float y, float p
     if( GameCore::OnTouch( action, id, x, y, pressure, size ) )
         return true;
 
-    // prefer 0,0 at bottom left.
+    // Prefer 0,0 at bottom left.
     y = m_WindowHeight - y;
 
     m_Position.x = (x / m_WindowWidth) * 2 - 1;

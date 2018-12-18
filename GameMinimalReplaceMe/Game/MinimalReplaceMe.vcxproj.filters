@@ -75,9 +75,6 @@
     <ClCompile Include="SourceCommon\Core\GameMinimalReplaceMe.cpp">
       <Filter>Source\Core Files</Filter>
     </ClCompile>
-    <ClCompile Include="SourceWindows\WinMainWx.cpp">
-      <Filter>Source - Platform\Source - Windows</Filter>
-    </ClCompile>
     <ClCompile Include="SourceAndroid\main.cpp">
       <Filter>Source - Platform\Source - Android</Filter>
     </ClCompile>
@@ -106,9 +103,6 @@
     </ClInclude>
     <ClInclude Include="SourceCommon\Core\GameMinimalReplaceMe.h">
       <Filter>Source\Core Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SourceWindows\WinMainWx.h">
-      <Filter>Source - Platform\Source - Windows</Filter>
     </ClInclude>
     <ClInclude Include="SourceAndroid\main.h">
       <Filter>Source - Platform\Source - Android</Filter>
