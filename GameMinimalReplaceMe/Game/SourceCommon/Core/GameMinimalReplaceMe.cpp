@@ -8,6 +8,7 @@
 // 3. This notice may not be removed or altered from any source distribution.
 
 #include "GameCommonHeader.h"
+#include "../../../Framework/MyFramework/SourceCommon/Renderers/Renderer_Base.h"
 
 GameMinimalReplaceMe::GameMinimalReplaceMe()
 {
@@ -24,6 +25,10 @@ GameMinimalReplaceMe::~GameMinimalReplaceMe()
 void GameMinimalReplaceMe::OneTimeInit()
 {
     GameCore::OneTimeInit();
+
+    // Set Clear color to dark blue.
+    m_pRenderer->SetClearColor( ColorFloat( 0.0f, 0.0f, 0.2f, 0.0f ) );
+    m_pRenderer->SetClearDepth( 1.0f );
 
     // Create a shader group and a material with that shader.
     ShaderGroup* pShader_White = MyNew ShaderGroup( "Data/Shaders/Shader_White.glsl" );
@@ -51,10 +56,8 @@ void GameMinimalReplaceMe::OnDrawFrame(unsigned int canvasid)
 
     GameCore::OnDrawFrame( 0 );
 
-    // Set Clear color to dark blue and clear the screen.
-    glClearColor( 0, 0, 0.2f, 1 );
-    glClearDepth( 1 );
-    glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
+    // Clear the screen.
+    m_pRenderer->ClearBuffers( true, true, false );
 
     // Draw the sprite. No camera or projection, so coords are in clip space.
     MyMatrix transform;
@@ -71,10 +74,10 @@ bool GameMinimalReplaceMe::OnTouch(int action, int id, float x, float y, float p
         return true;
 
     // Prefer 0,0 at bottom left.
-    y = m_WindowHeight - y;
+    y = GetWindowHeight() - y;
 
-    m_Position.x = (x / m_WindowWidth) * 2 - 1;
-    m_Position.y = (y / m_WindowHeight) * 2 - 1;
+    m_Position.x = (x / GetWindowWidth()) * 2 - 1;
+    m_Position.y = (y / GetWindowHeight()) * 2 - 1;
 
     return false;
 }
