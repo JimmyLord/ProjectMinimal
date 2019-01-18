@@ -1,4 +1,5 @@
-#include "GameCommonHeader.h"
+#include "GamePCH.h"
+
 #include "BasicTimer.h"
 
 //#define SCREEN_WIDTH    1024 //1280

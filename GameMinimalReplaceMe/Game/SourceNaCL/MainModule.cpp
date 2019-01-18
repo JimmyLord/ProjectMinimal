@@ -1,9 +1,10 @@
-#include "GameCommonHeader.h"
-#include "../../Framework/MyFramework/SourceNaCL/MainInstance.h"
+#include "GamePCH.h"
+
 #include "ppapi/cpp/instance.h"
 #include "ppapi/cpp/module.h"
 #include "ppapi/gles2/gl2ext_ppapi.h"
 #include "../SourceCommon/Core/GameMinimalReplaceMe.h"
+#include "../../Framework/MyFramework/SourceNaCL/MainInstance.h"
 
 // The Module class.  The browser calls the CreateInstance() method to create
 // an instance of your NaCl module on the web page.  The browser creates a new

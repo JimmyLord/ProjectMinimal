@@ -66,9 +66,6 @@
     <ClCompile Include="SourceNaCL\MainModule.cpp">
       <Filter>Source - Platform\Source - NaCL</Filter>
     </ClCompile>
-    <ClCompile Include="SourceCommon\GameCommonHeader.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
     <ClCompile Include="SourceBlackBerry\src\main.cpp">
       <Filter>Source - Platform\Source - BlackBerry\src</Filter>
     </ClCompile>
@@ -90,13 +87,13 @@
     <ClCompile Include="SourceWP8\WP8Main.cpp">
       <Filter>Source - Platform\Source - WP8</Filter>
     </ClCompile>
+    <ClCompile Include="SourceCommon\GamePCH.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SourceWindows\WinMain.h">
       <Filter>Source - Platform\Source - Windows</Filter>
-    </ClInclude>
-    <ClInclude Include="SourceCommon\GameCommonHeader.h">
-      <Filter>Source</Filter>
     </ClInclude>
     <ClInclude Include="SourceIOS\main.h">
       <Filter>Source - Platform\Source - IOS</Filter>
@@ -121,6 +118,9 @@
     </ClInclude>
     <ClInclude Include="SourceWP8\WP8Main.h">
       <Filter>Source - Platform\Source - WP8</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceCommon\GamePCH.h">
+      <Filter>Source</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -188,6 +188,9 @@
       <Filter>Source - Platform\Source - Emscripten</Filter>
     </None>
     <None Include="Data\Shaders\Shader_White.glsl">
+      <Filter>Data\Shaders</Filter>
+    </None>
+    <None Include="Data\Shaders\Shader_Texture.glsl">
       <Filter>Data\Shaders</Filter>
     </None>
   </ItemGroup>

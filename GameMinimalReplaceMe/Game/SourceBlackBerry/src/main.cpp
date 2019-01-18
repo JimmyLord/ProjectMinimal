@@ -7,11 +7,11 @@
 // 2. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
 // 3. This notice may not be removed or altered from any source distribution.
 
-#include "GameCommonHeader.h"
-#include "Core/GameMinimalReplaceMe.h"
+#include "GamePCH.h"
 
-#include "../../MyFramework/SourceBlackBerry/BBMain.h"
+#include "Core/GameMinimalReplaceMe.h"
 #include "../SourceCommon/GameTypes/GameType_MinimalReplaceMe.h"
+#include "../../MyFramework/SourceBlackBerry/BBMain.h"
 
 // ScoreLoop simple demo... good for testing lots of scores(but it works, so useless :))
 const char* g_ScoreLoop_GameID = "b0c5ba61-fdf4-4744-a0d2-d3e34bc20cd5";

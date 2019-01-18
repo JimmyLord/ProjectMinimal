@@ -1,4 +1,5 @@
-﻿#include "GameCommonHeader.h"
+﻿#include "GamePCH.h"
+
 #include "CubeRenderer.h"
 #include "WP8Main.h"
 

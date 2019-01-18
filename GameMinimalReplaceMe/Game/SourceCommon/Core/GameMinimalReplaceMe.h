@@ -21,12 +21,16 @@ public:
     GameMinimalReplaceMe();
     virtual ~GameMinimalReplaceMe();
 
-    virtual void OneTimeInit();
-    virtual float Tick(float deltaTime);
-    virtual void OnDrawFrame(unsigned int canvasid);
+    // Initialization.
+    virtual void OneTimeInit() override;
 
-    virtual bool OnTouch(int action, int id, float x, float y, float pressure, float size);
-    virtual bool OnButtons(GameCoreButtonActions action, GameCoreButtonIDs id);
+    // Input/Event handling.
+    virtual bool OnTouch(int action, int id, float x, float y, float pressure, float size) override;
+    virtual bool OnButtons(GameCoreButtonActions action, GameCoreButtonIDs id) override;
+
+    // Update/Draw.
+    virtual float Tick(float deltaTime) override;
+    virtual void OnDrawFrame(unsigned int canvasid) override;
 };
 
 #endif //__GameMinimalReplaceMe_H__

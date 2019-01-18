@@ -1,4 +1,5 @@
-﻿#include "GameCommonHeader.h"
+﻿#include "GamePCH.h"
+
 #include "Direct3DBase.h"
 
 using namespace DirectX;

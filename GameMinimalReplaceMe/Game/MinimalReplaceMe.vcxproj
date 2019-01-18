@@ -486,7 +486,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>PCHFILE="GameCommonHeader.h";MYFW_WINDOWS;WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)../Framework/Libraries/b2Settings;$(SolutionDir)../Framework/Libraries/Box2D;SourceCommon;$(DXSDK_DIR)Include</AdditionalIncludeDirectories>
-      <PrecompiledHeaderFile>GameCommonHeader.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile>GamePCH.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -556,7 +556,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>PCHFILE="GameCommonHeader.h";MYFW_WINDOWS;WIN32;MYFW_USING_WX;wxMSVC_VERSION_AUTO;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)../Framework/Libraries/b2Settings;$(SolutionDir)../Framework/Libraries/Box2D;SourceCommon;$(DXSDK_DIR)Include</AdditionalIncludeDirectories>
-      <PrecompiledHeaderFile>GameCommonHeader.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile>GamePCH.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -720,7 +720,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>PCHFILE="GameCommonHeader.h";MYFW_WINDOWS;WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)../Framework/Libraries/b2Settings;$(SolutionDir)../Framework/Libraries/Box2D;SourceCommon;$(DXSDK_DIR)Include</AdditionalIncludeDirectories>
-      <PrecompiledHeaderFile>GameCommonHeader.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile>GamePCH.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -806,7 +806,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>PCHFILE="GameCommonHeader.h";MYFW_WINDOWS;WIN32;MYFW_USING_WX;wxMSVC_VERSION_AUTO;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)../Framework/Libraries/b2Settings;$(SolutionDir)../Framework/Libraries/Box2D;SourceCommon;$(DXSDK_DIR)Include</AdditionalIncludeDirectories>
-      <PrecompiledHeaderFile>GameCommonHeader.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile>GamePCH.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -1045,7 +1045,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='WxRelease|Emscripten'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="SourceCommon\Core\GameMinimalReplaceMe.cpp" />
-    <ClCompile Include="SourceCommon\GameCommonHeader.cpp">
+    <ClCompile Include="SourceCommon\GamePCH.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|NaCl64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|NaCl32'">Create</PrecompiledHeader>
@@ -1226,7 +1226,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='WxRelease|NaCl'">true</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="SourceCommon\Core\GameMinimalReplaceMe.h" />
-    <ClInclude Include="SourceCommon\GameCommonHeader.h" />
+    <ClInclude Include="SourceCommon\GamePCH.h" />
     <ClInclude Include="SourceIOS\main.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Android'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='WxDebug|Android'">true</ExcludedFromBuild>
@@ -1389,6 +1389,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Data\Shaders\Shader_Texture.glsl" />
     <None Include="Data\Shaders\Shader_White.glsl" />
     <None Include="SourceAndroid\AndroidApk\AndroidManifest.xml">
       <SubType>Designer</SubType>

@@ -7,9 +7,10 @@
 // 2. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
 // 3. This notice may not be removed or altered from any source distribution.
 
-#include "GameCommonHeader.h"
-#include "../../../Framework/MyFramework/SourceWindows/Screenshot.h"
+#include "GamePCH.h"
+
 #include "../../../Framework/MyFramework/SourceWindows/MYFWWinMain.h"
+#include "../../../Framework/MyFramework/SourceWindows/Screenshot.h"
 
 #define SCREEN_WIDTH    400
 #define SCREEN_HEIGHT   600

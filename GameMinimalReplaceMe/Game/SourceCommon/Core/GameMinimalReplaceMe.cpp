@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2012-2018 Jimmy Lord http://www.flatheadgames.com
+// Copyright (c) 2012-2019 Jimmy Lord http://www.flatheadgames.com
 //
 // This software is provided 'as-is', without any express or implied warranty.  In no event will the authors be held liable for any damages arising from the use of this software.
 // Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions:
@@ -7,12 +7,11 @@
 // 2. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
 // 3. This notice may not be removed or altered from any source distribution.
 
-#include "GameCommonHeader.h"
-#include "../../../Framework/MyFramework/SourceCommon/Renderers/Renderer_Base.h"
+#include "GamePCH.h"
 
 GameMinimalReplaceMe::GameMinimalReplaceMe()
 {
-    m_pSprite = 0;
+    m_pSprite = nullptr;
 
     m_Position.Set( 0, 0, 0 );
 }
@@ -22,6 +21,10 @@ GameMinimalReplaceMe::~GameMinimalReplaceMe()
     m_pSprite->Release();
 }
 
+//====================================================================================================
+// Initialization.
+//====================================================================================================
+
 void GameMinimalReplaceMe::OneTimeInit()
 {
     GameCore::OneTimeInit();
@@ -30,43 +33,29 @@ void GameMinimalReplaceMe::OneTimeInit()
     m_pRenderer->SetClearColor( ColorFloat( 0.0f, 0.0f, 0.2f, 0.0f ) );
     m_pRenderer->SetClearDepth( 1.0f );
 
-    // Create a shader group and a material with that shader.
-    ShaderGroup* pShader_White = MyNew ShaderGroup( "Data/Shaders/Shader_White.glsl" );
-    MaterialDefinition* pMaterialWhite = g_pMaterialManager->CreateMaterial();
-    pMaterialWhite->SetShader( pShader_White );
+    // Create a shader, texture and material.
+    ShaderGroup* pShader = MyNew ShaderGroup( "Data/Shaders/Shader_Texture.glsl" );
+    TextureDefinition* pTexture = g_pTextureManager->CreateTexture( "Data/Textures/Clouds.png" );
+    MaterialDefinition* pMaterial = g_pMaterialManager->CreateMaterial();
 
-    // Create a sprite, it's small since there's no camera or projection down below.
+    // Assign the shader and texture to the material.
+    pMaterial->SetShader( pShader );
+    pMaterial->SetTextureColor( pTexture );
+
+    // Create a sprite, it's small since there's no view or projection matrix down below.
     m_pSprite = MyNew MySprite( false );
     m_pSprite->Create( 0.1f, 0.1f, 0, 1, 0, 1, Justify_Center, true );
-    m_pSprite->SetMaterial( pMaterialWhite );
+    m_pSprite->SetMaterial( pMaterial );
 
-    // Release the shader and material.
-    pMaterialWhite->Release();
-    pShader_White->Release();
+    // Release the shader, texture and material.
+    pMaterial->Release();
+    pTexture->Release();
+    pShader->Release();
 }
 
-float GameMinimalReplaceMe::Tick(float deltaTime)
-{
-    return GameCore::Tick( deltaTime );
-}
-
-void GameMinimalReplaceMe::OnDrawFrame(unsigned int canvasid)
-{
-    checkGlError( "Start of OnDrawFrame.\n" );
-
-    GameCore::OnDrawFrame( 0 );
-
-    // Clear the screen.
-    m_pRenderer->ClearBuffers( true, true, false );
-
-    // Draw the sprite. No camera or projection, so coords are in clip space.
-    MyMatrix transform;
-    transform.CreateTranslation( m_Position );
-
-    m_pSprite->Draw( 0, 0, 0, &transform, 0, 0, 0, 0, 0, 0, 0, 0, false );
-
-    checkGlError( "After sprite draw.\n" );
-}
+//====================================================================================================
+// Input/Event handling.
+//====================================================================================================
 
 bool GameMinimalReplaceMe::OnTouch(int action, int id, float x, float y, float pressure, float size)
 {
@@ -76,6 +65,7 @@ bool GameMinimalReplaceMe::OnTouch(int action, int id, float x, float y, float p
     // Prefer 0,0 at bottom left.
     y = GetWindowHeight() - y;
 
+    // Move the square to the mouse position in clip space.
     m_Position.x = (x / GetWindowWidth()) * 2 - 1;
     m_Position.y = (y / GetWindowHeight()) * 2 - 1;
 
@@ -85,4 +75,27 @@ bool GameMinimalReplaceMe::OnTouch(int action, int id, float x, float y, float p
 bool GameMinimalReplaceMe::OnButtons(GameCoreButtonActions action, GameCoreButtonIDs id)
 {
     return GameCore::OnButtons( action, id );
+}
+
+//====================================================================================================
+// Update/Draw.
+//====================================================================================================
+
+float GameMinimalReplaceMe::Tick(float deltaTime)
+{
+    return GameCore::Tick( deltaTime );
+}
+
+void GameMinimalReplaceMe::OnDrawFrame(unsigned int canvasid)
+{
+    GameCore::OnDrawFrame( 0 );
+
+    // Clear the screen.
+    m_pRenderer->ClearBuffers( true, true, false );
+
+    // Draw the sprite. No camera or projection, so coordinates are in clip space.
+    MyMatrix transform;
+    transform.CreateTranslation( m_Position );
+
+    m_pSprite->Draw( nullptr, nullptr, &transform );
 }
