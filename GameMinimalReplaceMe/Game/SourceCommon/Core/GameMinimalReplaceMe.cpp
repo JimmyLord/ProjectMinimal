@@ -34,17 +34,17 @@ void GameMinimalReplaceMe::OneTimeInit()
     m_pRenderer->SetClearDepth( 1.0f );
 
     // Create a shader, texture and material.
-    ShaderGroup* pShader = MyNew ShaderGroup( "Data/Shaders/Shader_Texture.glsl" );
-    TextureDefinition* pTexture = g_pTextureManager->CreateTexture( "Data/Textures/Clouds.png" );
-    MaterialDefinition* pMaterial = g_pMaterialManager->CreateMaterial();
+    ShaderGroup* pShader = MyNew ShaderGroup( this, "Data/Shaders/Shader_Texture.glsl", nullptr );
+    TextureDefinition* pTexture = this->GetManagers()->GetTextureManager()->CreateTexture( "Data/Textures/Clouds.png" );
+    MaterialDefinition* pMaterial = this->GetManagers()->GetMaterialManager()->CreateMaterial();
 
     // Assign the shader and texture to the material.
     pMaterial->SetShader( pShader );
     pMaterial->SetTextureColor( pTexture );
 
     // Create a sprite, it's small since there's no view or projection matrix down below.
-    m_pSprite = MyNew MySprite( false );
-    m_pSprite->Create( 0.1f, 0.1f, 0, 1, 0, 1, Justify_Center, true );
+    m_pSprite = MyNew MySprite();
+    m_pSprite->Create( this->GetManagers()->GetBufferManager(), 0.1f, 0.1f, 0, 1, 0, 1, Justify_Center, true );
     m_pSprite->SetMaterial( pMaterial );
 
     // Release the shader, texture and material.
