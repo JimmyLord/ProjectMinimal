@@ -41,6 +41,7 @@ workspace "MinimalReplaceMe"
     configurations  { "Debug", "Release" }
     location        ( buildFolder )
     startproject    "MinimalReplaceMe"
+    cppdialect      "C++17"
 
     filter "system:windows"
         platforms       { "x86", "x64" }

@@ -1,13 +1,13 @@
 @echo This batch file will link the game data folder to the Android and NaCl build folders
 @echo --
 
-pushd GameEmptyReplaceMe\Game\SourceAndroid\AndroidStudio\app\src\main
-mkdir assets
-cd assets
-mklink /J "Data" "../../../../../../Data"
-popd
+rem pushd GameMinimalReplaceMe\Game\SourceAndroid\AndroidStudio\app\src\main
+rem mkdir assets
+rem cd assets
+rem mklink /J "Data" "../../../../../../Data"
+rem popd
 
-pushd GameEmptyReplaceMe\Game\SourceNaCL\Web
+pushd GameMinimalReplaceMe\Game\SourceNaCL\Web
 mklink /J "Data" "../../Data"
 popd
 
